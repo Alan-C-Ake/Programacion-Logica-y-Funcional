@@ -1,3 +1,4 @@
+# Alan Alberto Colli Ake 8-B
 #desafio 1: Ordenar hotcakes para la famlilia
 #objetivo: crear un programa que simule la prepación de piezas de hotkakes  y ordenar de acuerdo al numero de integrantes de mi familia
 
