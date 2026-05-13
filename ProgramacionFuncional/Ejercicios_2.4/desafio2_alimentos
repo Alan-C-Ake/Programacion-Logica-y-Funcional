@@ -1,0 +1,44 @@
+# Desafío 2
+'''
+Usando la lógica del ejercicio 2, realiza lo siguiente:
+1.- Define funciones para preparar cada tipo de alimento: pizza, hamburguesa y hotdog.
+2.- Crea una función ordenar_alimento que reciba como argumentos a la funcion preparar_alimento y
+numero de porciones.
+3.- Dentro de la función ordenar crea una lista que guarde las porciones de alimentos.
+4.- Dentro de la función ordenar, aplica la iteración a través de la lista por comprensión para
+llamar a la función preparar_alimento según el número de porciones proporcionado.
+5.- Finalmente en la función ordenar, devuelve la lista porciones_alimentos.
+6.- Cada grupo debe utilizar esta función para ordenar su elección de alimento y mostrar el resultado.
+7.- Prueba imprimir las ordenes
+8.- Crea una función que permita calcular bonus para los grupos que que recibe el numero de porciones.
+9.- Compara si el numero de porciones es mayor a 2, si es asi, retorna "coca gratis", sino retorna
+vacio.
+Muestra el bonus en la orden de cada grupo.
+10.- Modifica la funcion ordenar_alimento para usar la funcion calcular_bonus y guardar el resultado
+en una variable bonus.
+11.- Agregar en la devolucion el resultado de las ordenes con el bonus.
+'''
+
+def preparar_pizza():
+    return "🍕pizza"
+
+def preparar_hamburguesa():
+    return "🍔hamburguesa"
+
+def preparar_hotdog():
+    return "🌭hotdog"
+
+def cal_bonus(num_porciones):
+    return "coca gratis" if num_porciones > 2 else ""
+
+def ordenar_alimento(preparar_alimento, num_porciones):
+    porciones_alimento = [preparar_alimento() for _ in range(num_porciones)]
+    bonus = cal_bonus(num_porciones)
+    return porciones_alimento, bonus 
+
+# Ejemplo de uso
+alimento_grupoA = ordenar_alimento(preparar_pizza, 5)
+alimento_grupoB = ordenar_alimento(preparar_hamburguesa, 3)
+alimento_grupoC = ordenar_alimento(preparar_hotdog, 2)
+
+print(alimento_grupoA, alimento_grupoB, alimento_grupoC)
